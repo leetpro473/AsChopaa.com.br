@@ -38,7 +38,7 @@ const SignupForm = () => {
       const newUser = await createUserAccount(user);
 
       if (!newUser) {
-        toast({ title: "Falha no registro. Por favor, tente novamente.", });
+        toast({ title: "Falha na inscrição. Por favor, tente novamente.", });
         
         return;
       }
@@ -49,7 +49,7 @@ const SignupForm = () => {
       });
 
       if (!session) {
-        toast({ title: "Algo deu errado. Por favor faça login na sua nova conta", });
+        toast({ title: "Algo deu errado. Por favor faça login na sua nova conta.", });
         
         navigate("/sign-in");
         
@@ -78,10 +78,10 @@ const SignupForm = () => {
         <img src="https://imgur.com/bgfX6qX.png" alt="logo" />
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-        Crie uma nova conta
+          Crie uma nova conta
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-        Para usar o Hydra, insira seus dados
+          Para usar o Hydra, insira seus dados
         </p>
 
         <form
@@ -149,16 +149,16 @@ const SignupForm = () => {
                 <Loader /> Carregando...
               </div>
             ) : (
-              "Registrar"
+              "Criar conta"
             )}
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-          Já tem uma conta?
+            Já tem uma conta?
             <Link
               to="/sign-in"
               className="text-primary-500 text-small-semibold ml-1">
-              Login
+              Log in
             </Link>
           </p>
         </form>
