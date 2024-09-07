@@ -99,12 +99,12 @@ const SigninForm = () => {
                 <Loader /> Carregando...
               </div>
             ) : (
-              "Log in"
+              "Login"
             )}
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Não&apos; tem uma conta?
+            Não tem uma conta?
             <Link
               to="/sign-up"
               className="text-primary-500 text-small-semibold ml-1">
