@@ -38,7 +38,7 @@ const SignupForm = () => {
       const newUser = await createUserAccount(user);
 
       if (!newUser) {
-        toast({ title: "Falha no registro. Por favor, tente novamente.", });
+        toast({ title: "Sign up failed. Please try again.", });
         
         return;
       }
@@ -49,7 +49,7 @@ const SignupForm = () => {
       });
 
       if (!session) {
-        toast({ title: "Algo deu errado. Por favor faça login na sua nova conta.", });
+        toast({ title: "Something went wrong. Please login your new account", });
         
         navigate("/sign-in");
         
@@ -63,7 +63,7 @@ const SignupForm = () => {
 
         navigate("/");
       } else {
-        toast({ title: "Falha no login. Por favor, tente novamente.", });
+        toast({ title: "Login failed. Please try again.", });
         
         return;
       }
@@ -75,13 +75,13 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <img src="https://imgur.com/bgfX6qX.png" alt="logo" />
+        <img src="/assets/images/logo.svg" alt="logo" />
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-           Crie uma nova conta
+          Create a new account
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-           Para usar o Hydra, insira seus dados
+          To use snapgram, Please enter your details
         </p>
 
         <form
@@ -92,7 +92,7 @@ const SignupForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Nome</FormLabel>
+                <FormLabel className="shad-form_label">Name</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
@@ -106,7 +106,7 @@ const SignupForm = () => {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Usuário</FormLabel>
+                <FormLabel className="shad-form_label">Username</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
@@ -134,7 +134,7 @@ const SignupForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Senha</FormLabel>
+                <FormLabel className="shad-form_label">Password</FormLabel>
                 <FormControl>
                   <Input type="password" className="shad-input" {...field} />
                 </FormControl>
@@ -146,15 +146,15 @@ const SignupForm = () => {
           <Button type="submit" className="shad-button_primary">
             {isCreatingAccount || isSigningInUser || isUserLoading ? (
               <div className="flex-center gap-2">
-                <Loader /> Carregando...
+                <Loader /> Loading...
               </div>
             ) : (
-              "Criar conta"
+              "Sign Up"
             )}
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Já tem uma conta?
+            Already have an account?
             <Link
               to="/sign-in"
               className="text-primary-500 text-small-semibold ml-1">
